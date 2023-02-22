@@ -10,18 +10,25 @@ The dataset we were provided consisted of recipes and ratings for the provided r
 
 ### Recipes Data 
 - 83781 rows × 12 columns
-Relevant columns included: 
-- id: unique string of numbers to identify each recipe
-- minutes: integer value to convey how long it takes to prepare the recipe in minutes
-- n_steps: integer value to convey how many steps are required to prepare the recipe
+
+#### Relevant columns included: 
+id
+: unique string of numbers to identify each recipe
+minutes
+: integer value to convey how long it takes to prepare the recipe in minutes
+n_steps
+: integer value to convey how many steps are required to prepare the recipe
 
 
 
 ### Interactions (Ratings) Data
 - 731927 rows × 5 columns
-Relevant columns included:
-- recipe_id: unique string of numbers corresponding to a recipe
-- rating: values ranging from NaN, integers from 1 to 5 to represent the rating a user gives that recipe
+
+#### Relevant columns included:
+recipe_id
+: unique string of numbers corresponding to a recipe
+rating
+: values ranging from NaN, integers from 1 to 5 to represent the rating a user gives that recipe
 
 
 ## Cleaning and EDA
