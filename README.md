@@ -61,9 +61,17 @@ print(recipe_inter.head().to_markdown(index=True))
 Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 Embed at least one plotly plot you created in your notebook that displays the distribution of a single column (see Part 2: Report for instructions). Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one univariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
+### Univariate Visualization 
+
+#### Histogram of N_Steps Column 
+The histogram of n_steps shows us that the most common steps for a recipe to have is 7 and that the most common number of steps for a recipe to have is between 3 and 11.
 
 <iframe src="assets/n_steps_histogram.html" width=800 height=600 frameBorder=0></iframe>
 
+#### Bivariate Visualization 
+Contrary to intuition, our scatter plot shows us that the number of steps is not necessarily correlated with more time to cook. Matter of fact, recipes with cooking times greater than 1000 minutes are more likely to be between 0-35 steps considering the maximum amount of n_steps is 100. 
+
+<iframe src="assets/n_steps_minutes_scatter.html" width=800 height=600 frameBorder=0></iframe>
 
 Embed at least one plotly plot that displays the relationship between two columns. Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one bivariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
 
