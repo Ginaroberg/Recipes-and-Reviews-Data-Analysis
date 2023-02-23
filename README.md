@@ -82,6 +82,50 @@ X
 • The empirical distribution of the test statistic used in one of your permutation tests, along with the observed statistic.
 
 ## Hypothesis Testing
+
+### Question - What is the relationship between the cooking time and average rating of recipes?
+
+
+### Null Hypothesis - Cooking time and average rating of a recipe are related.
+
+### Alternative Hypothesis - Cooking time and average rating of a recipe are not related.
+
+If the alternative hypothesis is "A and B are different", then the test statistic should measure distances and should contain an absolute value.
+
+The null hypothesis states that no matter what cooking time a recipe has, all recipes should have similar average rating of recipes. For this test we are going to use all recipes with a cooking time between 20 and 30 minutes (inclusive). 
+
+That is, if we repeatedly sampled groups of 52227 recipes from the population and computed their mean rating, it would not be uncommon to see an average seen above.
+
+Plan: Repeatedly sample (without replacement) 52227 cooking recipes from the population and compute their average rating, and see where the 20-30 minutes cooking time average rating lies in this distribution.
+Average rating is our test statistic. We will be comparing the simulated test statistics with the observed test statistc to calculate the p-value with a 5% significance level to determine whether we reject the null hypothesis or fail to reject the null hypothesis.
+
+#### 1. Filtered the dataframe to the necessary columns, which are minutes and ratings
+
+|    |   minutes |   rating |
+|---:|----------:|---------:|
+|  9 |        20 |        4 |
+| 48 |        30 |        5 |
+| 49 |        30 |        5 |
+| 50 |        30 |        4 |
+| 51 |        30 |        4 |
+| 52 |        30 |        5 |
+| 56 |        30 |        5 |
+| 58 |        25 |        4 |
+| 59 |        25 |        5 |
+| 72 |        30 |        2 |
+
+#### 2. Simulated the Empirical Distribution following the Null Hypothesis
+
+<iframe src="assets/emp_dist_avg_rating_ss.html" width=800 height=600 frameBorder=0></iframe>
+
+
+
+
+
+
+
+
+
 Clearly state your null and alternative hypotheses, your choice of test statistic and significance level, the resulting 
 p
 -value, and your conclusion. Justify why these choices are good choices for answering the question you are trying to answer.
