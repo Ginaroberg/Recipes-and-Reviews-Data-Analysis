@@ -6,6 +6,10 @@ This was a research project for a course on the Practice and Application of Data
 ## Introduction
 The dataset we were provided consisted of recipes and ratings for the provided recipes, originally scraped from food.com.  With this data, our analysis was centered around the question of **"What is the relationship between the cooking time and average rating of recipes?"**  Since there are an extensive list of options when it comes to recipes to make, there are many factors that can come into consideration, like how long it will take to prepare, how much preparation is required, what supplies and ingredients are needed, and more.  If it is a new recipe that you haven't made before reviews and ratings are often helpful in narrowing down our choices and hearing from other people's experiences making the same dish.  However, how much correlation can there be between how much time must be invested to create a certain meal, and how well the meal usually turns out? Will investing more cooking time result in a better tasting meal? Are the ratings of these meals simply influenced by how much time and effort was put in? To answer these questions, we utilized our dataset. 
 
+
+## Data cleaning
+To clean the data we first started by converting all the string representations of list to an actual list representation in python. These columns that we needed to do this on were the tags and nutrition column. The nutrition column was generated from an image of the nutrition information and only numbers were extracted and combined into a list. Afterwards we then hot encoded the tags column and also encoded the nutrition column into their respective elements ie. calories, proteins, fat. In addition, we also converted the submitted column to a date time object. This data was collected by scraping food.com and most of the columns were collected as objects when they need to be something else ie. dates or lists instead of strings. 
+
 ### Recipes Data 
 - 83781 rows × 12 columns
 
