@@ -103,11 +103,11 @@ Since the two distributions of sugar, with and without reviews is quantitative (
 
 #### Distribution of Sugar when Review is Missing 
 
-<iframe src="assets/na_rev_sugar.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/na_rev_sug.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Distribution of Minutes when Rating is Not Missing
 
-<iframe src="assets/nona_rev_sugar.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/nona_rev_sug.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Permutation Test - Review and Sugar 
 
@@ -136,7 +136,7 @@ Since the two distributions of saturated fat, with and without reviews is quanti
 
 #### Distribution of Saturated Fat when Review is Not Missing
 
-<iframe src="assets/nona_ratings_hist.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/nona_rev_sat_fat.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Permutation Test - Review and Saturated Fat
 
