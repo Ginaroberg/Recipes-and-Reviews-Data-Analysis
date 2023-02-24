@@ -113,7 +113,7 @@ Since the two distributions of cooking time minutes, with and without ratings is
 
 Observed KS = 0.09355608057337494
 
-p_val = 0.0
+p_val = 0.0 
 
 <iframe src="assets/emp_dist_ks_min.html" width=800 height=600 frameBorder=0></iframe>
 
