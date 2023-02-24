@@ -105,7 +105,7 @@ Since the two distributions of sugar, with and without reviews is quantitative (
 
 <iframe src="assets/na_rev_sug.html" width=800 height=600 frameBorder=0></iframe>
 
-#### Distribution of Minutes when Rating is Not Missing
+#### Distribution of Sugar when Review is Not Missing
 
 <iframe src="assets/nona_rev_sug.html" width=800 height=600 frameBorder=0></iframe>
 
