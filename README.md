@@ -91,48 +91,65 @@ This is a pivot table with the mean minutes and n_steps for recipes of each rati
 
 A column that we believe is **NMAR** in this data set is the **description column**. We beleive this as when we look at the other columns there seems to be no correlation or additional information to reason about the missigness of the description column. Some additional information that could explain the missigness would be that if the name of the recipe was self explanatory or if the user who inputted the recipe is known to not add any descriptions when enterring the recipe. Another column we believe to be NMAR is review. For the reason column there seems to be no corrleation with the other columns and it seems as if the missigness of the value depends on itself. Some additional information that could help with this is the number of views per recipe or the popularity as that could be a variable that could be related to missigness of reviews. As some reviews have up to 10 reviews while others have none.
 
-### Missingness of Ratings Column and Minutes
+### Missingness of Reviews
 
-#### Ratings and Minutes - Do minutes for recipes without ratings and minutes for recipe with  ratings come from the same distribution?
+#### Reviews and Sugar(NMAR not dependent) - Does sugar without reviews and sugar with  reviews come from the same distribution?
 
-Null Hypothesis: The K-S statistic of minutes from recipes with ratings and mean minutes from recipes without ratings was drawn by random chance alone.
+Null Hypothesis: The K-S statistic of sugar from recipes with reviews and mean sugar from recipes without reviews was drawn by random chance alone.
 
-Alternative Hypothesis: The K-S statistic of minutes from recipes with ratings and mean minutes from recipes with ratings was not by random chance.
+Alternative Hypothesis: The K-S statistic of sugar from recipes with reviews and mean sugar from recipes with reviews was not by random chance.
 
-Since the two distributions of cooking time minutes, with and without ratings is quantitative (numerical), and based on the plotted histograms, they are centered in similar locations but have different shapes, we are using the Kologorov-Smirnov statistic.
+Since the two distributions of sugar, with and without reviews is quantitative (numerical), and based on the plotted histograms, they are centered in similar locations but have different shapes, we are using the Kologorov-Smirnov statistic.
 
-#### Distribution of Minutes when Rating is Missing 
+#### Distribution of Sugar when Review is Missing 
 
-<iframe src="assets/na_ratings_hist.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/na_rev_sugar.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Distribution of Minutes when Rating is Not Missing
 
-<iframe src="assets/nona_ratings_hist.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/nona_rev_sugar.html" width=800 height=600 frameBorder=0></iframe>
 
-#### Permutation Test - Ratings and Minutes 
+#### Permutation Test - Review and Sugar 
 
-Observed KS = 0.09355608057337494
+Observed KS = 0.12425191323333018
 
-p_val = 0.0 
+p_val = 0.276
 
-<iframe src="assets/emp_dist_ks_min.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/emp_ks.html" width=800 height=600 frameBorder=0></iframe>
 
 #### Conclusion
 With 5% significance level, we reject the null hypothesis. The K-S statistic of minutes from recipes with ratings and recipes without ratings was not by random chance then the ratings column is MAR dependent on minutes.
 
-#### Permutation Test - Ratings and N_steps
 
-Present and interpret the results of your missingness permutation tests with respect to your data and question. Embed a plotly plot related to your missingness exploration; ideas include:
-• The distribution of column 
-Y
- when column 
-X
- is missing and the distribution of column 
-Y
- when column 
-X
- is not missing, as was done in Lecture 12.
-• The empirical distribution of the test statistic used in one of your permutation tests, along with the observed statistic.
+
+#### Reviews and saturated fat (MAR is dependent)- Do saturated fat for recipes without reviews and saturated fat or recipes with  reviews come from the same distribution?
+
+Null Hypothesis: The difference in the distribution of saturated fat  for recipes with reviews and the distribution of saturated fat  for recipes without reviews was drawn by random chance alone.
+
+Alternative Hypothesis: The difference in the distribution of saturated fat  for recipes with reviews and the distribution of saturated fat  for reviews without ratings was not drawn by random chance alone.
+
+Since the two distributions of saturated fat, with and without reviews is quantitative (numerical), and based on the plotted histograms, they have similar basic shapes but are centered at different locations with different means, we are using difference in group means as our test statistic.
+
+#### Distribution of Saturated Fat when Review is Missing 
+
+<iframe src="assets/na_rev_sat_fat.html" width=800 height=600 frameBorder=0></iframe>
+
+#### Distribution of Saturated Fat when Review is Not Missing
+
+<iframe src="assets/nona_ratings_hist.html" width=800 height=600 frameBorder=0></iframe>
+
+#### Permutation Test - Review and Saturated Fat
+
+Observed Diff in Means = 33.9134865422171
+
+p_val = 0.01
+
+<iframe src="assets/rev_sat_fat.html" width=800 height=600 frameBorder=0></iframe>
+
+#### Conclusion
+With 5% significance level, we reject the null hypothesis. The K-S statistic of minutes from recipes with ratings and recipes without ratings was not by random chance then the ratings column is MAR dependent on minutes.
+
+
 
 ## Hypothesis Testing
 
