@@ -87,9 +87,9 @@ This is a pivot table with the mean minutes and n_steps for recipes of each rati
 
 ## Assessment of Missingness
 
-### NMAR - INSERT COLUMN
+### NMAR - Description Column
 
-State whether you believe there is a column in your dataset that is NMAR. Explain your reasoning and any additional data you might want to obtain that could explain the missingness (thereby making it MAR). Make sure to explicitly use the term “NMAR.”
+A column that we believe is **NMAR** in this data set is the **description column**. We beleive this as when we look at the other columns there seems to be no correlation or additional information to reason about the missigness of the description column. Some additional information that could explain the missigness would be that if the name of the recipe was self explanatory or if the user who inputted the recipe is known to not add any descriptions when enterring the recipe. Another column we believe to be NMAR is review. For the reason column there seems to be no corrleation with the other columns and it seems as if the missigness of the value depends on itself. Some additional information that could help with this is the number of views per recipe or the popularity as that could be a variable that could be related to missigness of reviews. As some reviews have up to 10 reviews while others have none.
 
 ### Missingness of Ratings Column
 
