@@ -128,56 +128,54 @@ X
 
 ## Hypothesis Testing
 
-### Question - What is the relationship between the cooking time and average rating of recipes?
+### Question - What is the relationship between the cooking time and the average rating of recipes?
 
+#### Null Hypothesis: Cooking time and average rating of recipes are not related
+the ratings of the recipes with the greater cooking time were drawn uniformly at random from the population distribution
 
-### Null Hypothesis - Cooking time and average rating of a recipe are related.
+#### Alternative Hypothesis: Cooking time and average rating of recipes are related
+the ratings of the recipes with the greater cooking time were not drawn at random from the population distribution
 
-### Alternative Hypothesis - Cooking time and average rating of a recipe are not related.
+#### Plan
+1. Create Table containg ranges of cooking times (minute_groups = ['0-19','20-39','40-59','60-79','80-100']
+2. Look at table and pick the cooking time range that contians the highest mean rating, whichever cooking range this is will be our sample that we are comparing to the population distribution 
+3. Run simulation and repeatedly sample the number of recipes from the cooking time range we selected, without replacement, to create an empirical distribution, using mean rating as our test statistic
+4. Calculate P-value
+5. Draw a conclusion on whether we reject the null hypothesis or fail to reject the null hypothesis with a 5% significance level
 
-If the alternative hypothesis is "A and B are different", then the test statistic should measure distances and should contain an absolute value.
+#### 1. Filtered the dataframe to the necessary columns, which were minutes and ratings, and then added a new column to assign them to minute groups
 
-The null hypothesis states that no matter what cooking time a recipe has, all recipes should have similar average rating of recipes. For this test we are going to use all recipes with a cooking time between 20 and 30 minutes (inclusive). 
+|    |   minutes |   rating | range of cooking time   |
+|---:|----------:|---------:|:------------------------|
+|  0 |        40 |        4 | 40-59                   |
+|  1 |        45 |        5 | 40-59                   |
+|  2 |        40 |        5 | 40-59                   |
+|  3 |        40 |        5 | 40-59                   |
+|  4 |        40 |        5 | 40-59                   |
+|  5 |        40 |        5 | 40-59                   |
+|  6 |       120 |        5 |                         |
+|  7 |        90 |        5 | 80-100                  |
+|  8 |        90 |        5 | 80-100                  |
+|  9 |        20 |        4 | 20-39                   |
 
-That is, if we repeatedly sampled groups of 52227 recipes from the population and computed their mean rating, it would not be uncommon to see an average seen above.
+#### 2. Created a grouped table to analyze the means for each cooking time group
+From this table we noticed that for the cooking time range of 0-19 minutes, this group had the highest average rating of 4.72.  We chose this group as our sample.
 
-Plan: Repeatedly sample (without replacement) 52227 cooking recipes from the population and compute their average rating, and see where the 20-30 minutes cooking time average rating lies in this distribution.
-Average rating is our test statistic. We will be comparing the simulated test statistics with the observed test statistc to calculate the p-value with a 5% significance level to determine whether we reject the null hypothesis or fail to reject the null hypothesis.
+| range of cooking time   |   minutes |   rating |   # of recipes |
+|:------------------------|----------:|---------:|---------------:|
+| 0-19                    |   9.61295 |  4.71693 |          49546 |
+| 20-39                   |  27.3994  |  4.67881 |          67483 |
+| 40-59                   |  46.2631  |  4.66724 |          41102 |
+| 60-79                   |  66.4603  |  4.6764  |          25470 |
+| 80-100                  |  85.9123  |  4.67798 |           9192 |
 
-#### 1. Filtered the dataframe to the necessary columns, which are minutes and ratings
+#### 3. We simulated under the null hypothesis to create an empirical distribution, by sampling 49546 recipes, without replacement, from the population, and calculated the average rating of each sample.  Here are our first 10 samples:
+ - array([4.67892464, 4.68360715, 4.68209341, 4.67726961, 4.6839099 , 4.67422194, 4.67757236, 4.67617971, 4.68162919, 4.67688613])
 
-|    |   minutes |   rating |
-|---:|----------:|---------:|
-|  9 |        20 |        4 |
-| 48 |        30 |        5 |
-| 49 |        30 |        5 |
-| 50 |        30 |        4 |
-| 51 |        30 |        4 |
-| 52 |        30 |        5 |
-| 56 |        30 |        5 |
-| 58 |        25 |        4 |
-| 59 |        25 |        5 |
-| 72 |        30 |        2 |
+#### 4. With our simulated test statistics, we compared them to our observed test statistic of and average rating of 4.71693, and calculated the p-value, which ended up being 0.0
 
-#### 2. Simulated the Empirical Distribution following the Null Hypothesis
+<iframe src="assets/httest-emp-hist.html" width=800 height=600 frameBorder=0></iframe>
 
-<iframe src="assets/emp_dist_avg_rating_ss.html" width=800 height=600 frameBorder=0></iframe>
+#### 5. At the 5% significance level, we reject the null hypothesis and conclude that there could possibly be a correlation between cooking time and rating of recipes.
 
-
-
-
-
-
-
-
-
-Clearly state your null and alternative hypotheses, your choice of test statistic and significance level, the resulting 
-p
--value, and your conclusion. Justify why these choices are good choices for answering the question you are trying to answer.
-
-Optional: Embed a visualization related to your hypothesis test in your website.
-
-Tip: When making writing your conclusions to the statistical tests in this project, never use language that implies an absolute conclusion; since we are performing statistical tests and not randomized controlled trials, we cannot prove that either hypothesis is 100% true or false.
-
-“Only a Sith deals in absolutes” - Obi-Wan Kenobi
 
