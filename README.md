@@ -137,7 +137,7 @@ the ratings of the recipes with the greater cooking time were drawn uniformly at
 the ratings of the recipes with the greater cooking time were not drawn at random from the population distribution
 
 #### Plan
-1. Create Table containg ranges of cooking times (minute_groups = ['0-19','20-39','40-59','60-79','80-100']
+1. Create Table containg ranges of cooking times (minute_groups = ['0-19','20-39','40-59','60-79','80+']
 2. Look at table and pick the cooking time range that contians the highest mean rating, whichever cooking range this is will be our sample that we are comparing to the population distribution 
 3. Run simulation and repeatedly sample the number of recipes from the cooking time range we selected, without replacement, to create an empirical distribution, using mean rating as our test statistic
 4. Calculate P-value
@@ -153,7 +153,7 @@ the ratings of the recipes with the greater cooking time were not drawn at rando
 |  3 |        40 |        5 | 40-59                   |
 |  4 |        40 |        5 | 40-59                   |
 |  5 |        40 |        5 | 40-59                   |
-|  6 |       120 |        5 |                         |
+|  6 |       120 |        5 | 80+                     |
 |  7 |        90 |        5 | 80-100                  |
 |  8 |        90 |        5 | 80-100                  |
 |  9 |        20 |        4 | 20-39                   |
@@ -167,7 +167,7 @@ From this table we noticed that for the cooking time range of 0-19 minutes, this
 | 20-39                   |  27.3994  |  4.67881 |          67483 |
 | 40-59                   |  46.2631  |  4.66724 |          41102 |
 | 60-79                   |  66.4603  |  4.6764  |          25470 |
-| 80-100                  |  85.9123  |  4.67798 |           9192 |
+| 80-100                  |  410.2530 |  4.64749 |          35790 |
 
 #### 3. We simulated under the null hypothesis to create an empirical distribution, by sampling 49546 recipes, without replacement, from the population, and calculated the average rating of each sample.  Here are our first 10 samples:
  - array([4.67892464, 4.68360715, 4.68209341, 4.67726961, 4.6839099 , 4.67422194, 4.67757236, 4.67617971, 4.68162919, 4.67688613])
