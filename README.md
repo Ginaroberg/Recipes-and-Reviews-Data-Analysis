@@ -91,12 +91,19 @@ This is a pivot table with the mean minutes and n_steps for recipes of each rati
 
 A column that we believe is **NMAR** in this data set is the **description column**. We beleive this as when we look at the other columns there seems to be no correlation or additional information to reason about the missigness of the description column. Some additional information that could explain the missigness would be that if the name of the recipe was self explanatory or if the user who inputted the recipe is known to not add any descriptions when enterring the recipe. Another column we believe to be NMAR is review. For the reason column there seems to be no corrleation with the other columns and it seems as if the missigness of the value depends on itself. Some additional information that could help with this is the number of views per recipe or the popularity as that could be a variable that could be related to missigness of reviews. As some reviews have up to 10 reviews while others have none.
 
-### Missingness of Ratings Column
+### Missingness of Ratings Column and Minutes
+
+#### Ratings and Minutes - Do minutes for recipes without ratings and minutes for recipe with  ratings come from the same distribution?
+
+Null Hypothesis: The K-S statistic of minutes from recipes with ratings and mean minutes from recipes without ratings was drawn by random chance alone.
+
+Alternative Hypothesis: The K-S statistic of minutes from recipes with ratings and mean minutes from recipes with ratings was not by random chance.
+
+Since the two distributions of cooking time minutes, with and without ratings is quantitative (numerical), and based on the plotted histograms, they are centered in similar locations but have different shapes, we are using the Kologorov-Smirnov statistic.
 
 #### Distribution of Minutes when Rating is Missing 
 
 <iframe src="assets/na_ratings_hist.html" width=800 height=600 frameBorder=0></iframe>
-
 
 #### Distribution of Minutes when Rating is Not Missing
 
@@ -104,13 +111,14 @@ A column that we believe is **NMAR** in this data set is the **description colum
 
 #### Permutation Test - Ratings and Minutes 
 
-To see if these two samples come from the same distribution, we conducted a permutation test, using signed difference in mean minutes for our test statistic. 
+Observed KS = 0.09355608057337494
 
-Observed Statistic = 51.46
+p_val = 0.0
 
-p-value = 0.122
+<iframe src="assets/emp_dist_ks_min.html" width=800 height=600 frameBorder=0></iframe>
 
-<iframe src="assets/emp_dist_diff_min.html" width=800 height=600 frameBorder=0></iframe>
+#### Conclusion
+With 5% significance level, we reject the null hypothesis. The K-S statistic of minutes from recipes with ratings and recipes without ratings was not by random chance then the ratings column is MAR dependent on minutes.
 
 #### Permutation Test - Ratings and N_steps
 
@@ -167,7 +175,7 @@ From this table we noticed that for the cooking time range of 0-19 minutes, this
 | 20-39                   |  27.3994  |  4.67881 |          67483 |
 | 40-59                   |  46.2631  |  4.66724 |          41102 |
 | 60-79                   |  66.4603  |  4.6764  |          25470 |
-| 80-100                  |  410.2530 |  4.64749 |          35790 |
+| 80+                     |  410.2530 |  4.64749 |          35790 |
 
 #### 3. We simulated under the null hypothesis to create an empirical distribution, by sampling 49546 recipes, without replacement, from the population, and calculated the average rating of each sample.  Here are our first 10 samples:
  - array([4.67892464, 4.68360715, 4.68209341, 4.67726961, 4.6839099 , 4.67422194, 4.67757236, 4.67617971, 4.68162919, 4.67688613])
